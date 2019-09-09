@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜数字小游戏</title>
+    <script>
+        //利用Math.random实现1-50之间产生一个随机数然后来猜的小游戏
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var random = getRandom(1, 50);
+        alert('现在来做个猜大小的小游戏吧！');
+        alert('你有10次机会输入一个1-50之间的数字');
+        var num;
+        for (var i = 1; i <= 10; i++) {
+            num = prompt('输入你想好的数字吧');
+            if (num > random) {
+                alert('你输入的数字大了，哈哈');
+            } else if (num < random) {
+                alert('你输入的数字小了，哈哈哈');
+            } else {
+                alert('猜中了，你可真厉害！！！');
+            }
+            if (i >= 10) {
+                alert('哎呀，10次机会用完了，还没猜中吗，重新刷新页面吧，哈哈哈！');
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
